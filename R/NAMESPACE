@@ -1,4 +1,17 @@
-exportPattern("^[[:alpha:]]+")
+# Funções exportadas do Campo Analítico
+export(ca_grid_uefa)
+export(plot_ca_perdas_v2)
+export(ca_relatorio_terco_final)
+export(ca_plot_passes)
+
+# Importações de dependências
 import(tidyverse)
-import(ggsoccer)
 import(ggplot2)
+import(ggsoccer)
+import(patchwork)
+import(gridExtra)
+import(dplyr)
+import(showtext)
+
+# Exportar tudo que começa com letra (opcional, mas seguro)
+exportPattern("^[[:alpha:]]+")
