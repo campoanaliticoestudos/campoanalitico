@@ -1,0 +1,19 @@
+Package: campoanalitico
+Type: Package
+Title: Ferramentas Editoriais Campo Analítico
+Version: 0.1.0
+Author: Aldrei Peralta [aut, cre]
+Maintainer: Aldrei Peralta <seu-email@exemplo.com>
+Description: Sistema unificado para análise tática e visualização de dados de futebol com padrão editorial.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    tidyverse,
+    ggsoccer,
+    patchwork,
+    showtext,
+    gridExtra,
+    dplyr,
+    ggplot2
+RoxygenNote: 7.2.3
