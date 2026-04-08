@@ -12,6 +12,8 @@ import(patchwork)
 import(gridExtra)
 import(dplyr)
 import(showtext)
+import(readr),
+import(httr)
 
 # Exportar tudo que começa com letra (opcional, mas seguro)
 exportPattern("^[[:alpha:]]+")
