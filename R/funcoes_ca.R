@@ -1,3 +1,30 @@
+#' Listar Bases de Dados Disponíveis
+#' @export
+ca_listar_bases <- function() {
+  url <- "https://api.github.com/repos/campoanaliticoestudos/Banco-de-dados-futebol/contents/"
+  res <- httr::GET(url)
+  conteudo <- httr::content(res)
+  
+  arquivos <- sapply(conteudo, function(x) x$name)
+  return(arquivos)
+}
+
+#' Carregar Partida do Banco de Dados
+#' @param nome_arquivo Nome do arquivo (ex: "partida_final.rds" ou "dados_scout.csv")
+#' @export
+ca_importar_dados <- function(nome_arquivo) {
+  url_base <- "https://raw.githubusercontent.com/campoanaliticoestudos/Banco-de-dados-futebol/main/"
+  url_final <- paste0(url_base, nome_arquivo)
+  
+  if (grepl(".rds$", nome_arquivo)) {
+    dados <- readRDS(url(url_final))
+  } else {
+    dados <- readr::read_csv(url_final)
+  }
+  
+  return(dados)
+}
+
 #' Gerar Grid UEFA Oficial (18 Zonas)
 #' @export
 ca_grid_uefa <- function() {
